@@ -10,7 +10,7 @@ amount = sumAfterCompoundInterest(100,0.02,2,10)
 print(amount)
 ```
 
-### Calculate Body Mass Index
+### Calculate Body Mass Index (BMI)
 ```
 def calculateBmiIndex(weightInKg, heightInM):
   return weightInKg/(heightInM**2)
@@ -33,14 +33,32 @@ def calculatePsiIndex(PSI):
     return "PSI:{0} - Low air pollution level".format(PSI)
   elif PSI >= 50 and PSI < 100:
     return "PSI:{0} - Moderate air pollution level".format(PSI)   
-  elif PSI >= 101 and PSI < 200:
+  elif PSI >= 100 and PSI < 200:
     return "PSI:{0} - unhealthy air pollution level".format(PSI)     
-  elif PSI >= 201 and PSI < 300:
+  elif PSI >= 200 and PSI < 300:
     return "PSI:{0} - Very unhealthy air pollution level".format(PSI)     
   elif PSI >= 300:
     return "PSI:{0} - Haxardous air pollution level".format(PSI)      
 
 print(calculatePsiIndex(500))
 # Source: https://en.wikipedia.org/wiki/Pollutant_Standards_Index
+```
+### Calculate number of times to obtain Six in a dice roll
+```
+import random
+def diceRoll():
+  # gets random value between 0 and 1
+  randomRoll = random.random()*7
+  # converts to integer
+  return int(randomRoll)
 
+def timesToRollSix():
+  rollValue = diceRoll()
+  timesRolled = 1
+  while rollValue <6:
+    timesRolled += 1
+    rollValue = diceRoll()
+  return "times to roll a six: {0}".format(timesRolled)
+
+print(timesToRollSix())
 ```
